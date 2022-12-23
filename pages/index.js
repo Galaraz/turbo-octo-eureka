@@ -2,9 +2,12 @@
 export default function Home(props) {
   const { destaques } = props
   return (
-    <div>
-     {destaques[0].id}
-    </div>
+    <>
+      <h1>Home</h1>
+      <div>
+        {destaques[0].id} - Veio da API
+      </div>
+    </>
   )
 }
 
@@ -19,7 +22,7 @@ export async function getServerSideProps() {
   }
   const list = await resposta.json()
 
-  // const list = { destaques :[{id: 123}] }
+ 
   return {
     props: list, 
   }
