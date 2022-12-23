@@ -8,7 +8,7 @@ export default function Home(props) {
   )
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   // let resposta = []
   // try{
   //   const urlLocal = "http://localhost:3000/"
@@ -18,6 +18,7 @@ export async function getServerSideProps() {
   //   resposta = await fetch(url +  "api/home")
   // }
   // const list = await resposta.json()
+
   const list = { destaques :[{id: 123}] }
   return {
     props: list, 
