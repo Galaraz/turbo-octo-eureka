@@ -8,7 +8,7 @@ import { Modal } from 'react-bootstrap';
 import NumberFormat from 'react-number-format';
 import ImageGallery from 'react-image-gallery';
 import { ToastContainer } from 'react-toastify';
-import ContentHeade from '../../components/ContentHeader';
+
 
 
 import { apiId, apiUrl, urlImgs, urlSite, urlFavicon, moneyFormatter,titleSite } from '../../utils';
@@ -204,7 +204,7 @@ function handleShow(value) {
         </Head> 
 
          <div className="main"> 
-            {/* <ContentHeade title="Imóvel"  /> */}
+          
          
         
             <div className="container visualizacao px-4 px-sm-0">        
