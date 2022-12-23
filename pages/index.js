@@ -12,16 +12,26 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  let resposta = []
-  try{
-    const urlLocal = "http://localhost:3000/"
-    resposta = await fetch(urlLocal +  "api/home")
-  }catch(e){
-   const url = "https://turbo-octo-eureka.pages.dev/"
-    resposta = await fetch(url +  "api/home")
-  }
-  const list = await resposta.json()
+  const apiId = "992";
+  const apiUrl = "https://dev.infoimoveis.com.br/webservice/hotsites.php";
 
+  const corpo = await JSON.stringify( {
+    acoes: [                        
+      { metodo: "destaques", params: [ { resultados: "4" }] },
+      { metodo: "ultimasnoticias", params: [ { resultados: "4" }] },
+    ], id: apiId
+  });
+
+const response =  await fetch(
+    apiUrl,
+    {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: corpo
+    }
+
+);
+const list = await response.json()
  
   return {
     props: list, 
