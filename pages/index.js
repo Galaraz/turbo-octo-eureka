@@ -9,8 +9,14 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const url = "https://turbo-octo-eureka.pages.dev/"
-  const resposta = await fetch(url  + "api/home")
+  let resposta = []
+  try{
+    const urlLocal = "http://localhost:3000/"
+    resposta = await fetch(urlLocal +  "api/home")
+  }catch(e){
+   const url = "https://turbo-octo-eureka.pages.dev/"
+    resposta = await fetch(url +  "api/home")
+  }
   const list = await resposta.json()
   return {
     props: list, 
