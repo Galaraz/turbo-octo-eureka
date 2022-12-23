@@ -1,13 +1,4 @@
 
-export default function Home(props) {
-  const { destaques } = props
-  return (
-    <>
-     {destaques[0].id}
-    </>
-  )
-}
-
 export async function getStaticProps() {
   // let resposta = []
   // try{
@@ -24,3 +15,14 @@ export async function getStaticProps() {
     props: list, 
   }
 }
+
+
+export default function Home(props) {
+  const { destaques } = props
+  return (
+    <div>
+     {destaques[0].id}
+    </div>
+  )
+}
+
