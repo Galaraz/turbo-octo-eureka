@@ -6,15 +6,15 @@ import '../styles/globals.css'
 // import WrapperStyle from '../components/WrapperStyle';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import AuthProvider from '../context';
+
 function MyApp({ Component, pageProps }) {
 
   return(
-    <AuthProvider>
-      {/* <Header/> */}
+   
+ 
        <Component {...pageProps} />
-      {/* <Footer/> */}
-    </AuthProvider>
+      
+  
   )  
 
 }

@@ -3,13 +3,13 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import ContentHeader from '../components/ContentHeaderMain';
+// import ContentHeader from '../components/ContentHeaderMain';
 // import Skeleton from '../components/Skeleton';
 
 //import styles from '../styles/Home.module.css'
 import Place from '../img/place.svg';
 import { descriptionDefault, urlImgs, urlSite, moneyFormatter, titleSite, urlFavicon } from '../utils';
-import { AuthContext } from '../context';
+
 
 export default function Home(props) {
  
@@ -17,7 +17,7 @@ export default function Home(props) {
   // const [ pageSkeleton, setPageSkeleton ] = useState(true);
   const [ destaques, setDestaques ] = useState(props.destaques);
   const [ noticias, setNoticias ] = useState(props.ultimasnoticias);
-  const {anunciante} = useContext(AuthContext) 
+
     
   useEffect(() => {        
    
@@ -77,7 +77,7 @@ for (let i = 0; i < 4; i++) {
 
       <div className="main">
                 
-                <ContentHeader /> 
+    
          
                 <div className="container py-4 px-4 px-sm-0">
                  <div  className="d-none d-md-block  ">
