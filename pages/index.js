@@ -1,5 +1,5 @@
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   let resposta = []
   try{
     const urlLocal = "http://localhost:3000/"
@@ -16,6 +16,9 @@ export async function getStaticProps() {
   }
 }
 
+export const config = {
+  runtime: 'experimental-edge',
+}
 
 export default function Home(props) {
   const { destaques } = props
