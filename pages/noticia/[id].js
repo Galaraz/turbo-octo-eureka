@@ -1,26 +1,24 @@
 import Head from 'next/head';
-import { useRouter } from 'next/router';
 
-import { useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux'
+
+import { useState, useEffect } from 'react';
+
 import Image from 'next/image';
 //import ReactGA from 'react-ga';
-import ContentHeade from '../../components/ContentHeader';
+
 
 
 import { apiUrl,  apiId, urlImgs, urlSite, titleSite, reloadTime, urlFavicon } from '../../utils';
 
 export default function Noticia(props) {    
 
-    const ancor = useRef(null);
-
-    const isOpen = useSelector(state => state.open);  
+ 
    
     const [ noticia, setNoticia ] = useState(props.noticia);
 
     useEffect(() => {
         getDados();
-        window.scroll({ top: (ancor.current.offsetTop + 50), left: 0, behavior: 'smooth' });
+      
         //ReactGA.initialize(gaId, {debug: false});
         //ReactGA.pageview(props.location.pathname);
     },[]);
@@ -70,9 +68,9 @@ export default function Noticia(props) {
                 <title>{ Object.keys(noticia).length > 0 ? `${noticia.titulo} | Notícia | ${titleSite}` : `${titleSite}`}</title>
             </Head>
 
-            <div ref={ancor} className={`${isOpen ? 'open ': ''}main`}>
+            <div  className={`open main`}>
             
-                {/* <ContentHeade title="Notícia"  /> */}
+             
 
                 <div className="container noticia px-4 px-sm-0">        
                     
