@@ -1,4 +1,13 @@
 
+export default function Home(props) {
+  const { destaques } = props
+  return (
+    <div>
+     {destaques[0].id}
+    </div>
+  )
+}
+
 export async function getServerSideProps() {
   let resposta = []
   try{
@@ -15,14 +24,3 @@ export async function getServerSideProps() {
     props: list, 
   }
 }
-
-
-export default function Home(props) {
-  const { destaques } = props
-  return (
-    <div>
-     {destaques[0].id}
-    </div>
-  )
-}
-
